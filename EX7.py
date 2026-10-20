@@ -1,12 +1,14 @@
-numeroSecreto = 1
+numeroSecreto = int(input("Digite o número secreto: "))
 
 tentativas = 0
 
 while True:
-    numero = int(input("Tente adivinhar um número de 1 a 10: "))
+    numero = int(input("Tente adivinhar o número secreto: "))
     tentativas += 1
     if numero == numeroSecreto:
-        print(f"Parabéns! Você acertou em {tentativas} tentativas.")
+        print(f"Parabéns! Você acertou em {tentativas} tentativas")
         break
+    elif numero < numeroSecreto:
+        print("O número secreto é maior!")
     else:
-        print("Tente novamente.2")
+        print("O número secreto é menor!")
