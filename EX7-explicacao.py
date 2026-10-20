@@ -1,20 +1,24 @@
-# número que o jogador precisa adivinhar
-numeroSecreto = 1
-# contador de quantas vezes o jogador tentou
+# Pede ao usuário para digitar o número que será o "segredo" a ser adivinhado
+numeroSecreto = int(input("Digite o número secreto: "))
+
+# Contador de tentativas, começa zerado
 tentativas = 0
 
-# while True cria um loop infinito, que só para quando encontrar um "break"
+# Loop infinito: só é interrompido quando o número é acertado (break)
 while True:
-    # pede um número ao usuário e converte o texto digitado em inteiro
-    numero = int(input("Digite um número de 1 a 10: "))
-    # soma 1 a cada tentativa feita
+    # Pede um palpite para tentar adivinhar o número secreto
+    numero = int(input("Tente adivinhar o número secreto: "))
+
+    # A cada palpite, soma 1 à contagem de tentativas
     tentativas += 1
+
     if numero == numeroSecreto:
-        # mensagens exibidas quando o jogador acerta
-        print("Parabéns! Você acertou o número secreto!")
-        print(f"Você acertou em {tentativas} tentativas.")
-        # break interrompe o loop, pois o jogador já acertou
+        # Acertou: mostra quantas tentativas foram necessárias e encerra o loop
+        print(f"Parabéns! Você acertou em {tentativas} tentativas")
         break
+    elif numero < numeroSecreto:
+        # Palpite menor que o número secreto: dá a dica de que o número é maior
+        print("O número secreto é maior!")
     else:
-        # mensagem exibida quando o jogador erra, e o loop continua
-        print("Tente novamente! O número secreto é diferen1te.")
+        # Palpite maior que o número secreto: dá a dica de que o número é menor
+        print("O número secreto é menor!")
